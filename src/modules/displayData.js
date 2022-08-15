@@ -26,9 +26,18 @@ export default class weather{
   static containerFill (weather){
     const temp = (weather.temperature - 273.15).toFixed(1);
     const tempFeel = (weather.feelsLike - 273.15).toFixed(1);
+    let weatherIconClass = '';
+    // TO change weather icons according to conditions
+    if(weather.sky === 'Clouds')weatherIconClass = 'clouds'
+    else if(weather.sky === 'Clear')weatherIconClass = 'clear'
+    else if(weather.sky === 'Rain' || weather.sky=='Drizzle')weatherIconClass = 'rain'
+    else if(weather.sky === 'Thunderstorm')weatherIconClass = 'thunderstorm'
+
     const innerHTML = `
     <h2 class="city">${weather.cityName}, ${weather.country}</h2>
     <h2 class="temperature">${temp} - <span class="sky">${weather.sky}</span></h2>
+    <i class="weather-icon ${weatherIconClass}"></i>
+    <p class="sky-desc">${weather.skyDesc}</p>
     <p class="feeling">feels like ${tempFeel}</p>
     <p class="humidity">humidity ${weather.humidity}%</p>
     <p class="wind-speed">wind ${weather.windSpeed} m/s</p>

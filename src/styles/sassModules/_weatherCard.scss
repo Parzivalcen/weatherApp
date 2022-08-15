@@ -1,1 +1,24 @@
 @use '../style' as *;
+
+.weather-container{
+  display: grid;
+  background-color: $secondary-background;
+  color: $font-p-color;
+  place-content: center;
+  width: 40vh;
+  padding: 1vh;
+  border-radius: 10px;
+  p{
+    text-transform: capitalize;
+  }
+  .clouds{
+    width: 8vh;
+    height: 4vh;
+    /* Change Icon color */
+    background-color: rgb(196, 0, 0);
+    -webkit-mask-image: url(../../imgs/Cloud.svg) ;
+    mask-image: url(../../imgs/Cloud.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
