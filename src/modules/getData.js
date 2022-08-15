@@ -12,7 +12,9 @@ export default class data {
       'sky':data.weather[0].main,
       'skyDesc':data.weather[0].description,
       'humidity':data.main.humidity,
-      'windSpeed':data.wind.speed
+      'windSpeed':data.wind.speed,
+      'time':data.dt,
+      'timeZone':data.timezone,
 
     }
     console.log('weather', weather);
