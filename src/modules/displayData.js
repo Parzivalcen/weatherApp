@@ -23,11 +23,14 @@ export default class weather{
     `
     return container;
   }
-  static containerFill (weather, temp, tempFeel){
+  static containerFill (weather){
+    const temp = (weather.temperature - 273.15).toFixed(1);
+    const tempFeel = (weather.feelsLike - 273.15).toFixed(1);
     const innerHTML = `
     <h2 class="city">${weather.cityName}, ${weather.country}</h2>
     <h2 class="temperature">${temp} - <span class="sky">${weather.sky}</span></h2>
-    <p class="feeling">Feels like ${tempFeel}</p>
+    <p class="feeling">feels like ${tempFeel}</p>
+    <p class="humidity">humidity ${weather.humidity}%</p>
     <p class="wind-speed">wind ${weather.windSpeed} m/s</p>
   `
   return innerHTML;
@@ -35,9 +38,7 @@ export default class weather{
   static dataContainer(weather){
     const container = document.createElement('div');
     container.classList.add('weather-container');
-    const temp = 30;
-    const tempFeel = 35;
-    container.innerHTML = this.containerFill(weather, temp, tempFeel);
+    container.innerHTML = this.containerFill(weather);
     return container;
   }
   static async showData (){
@@ -57,8 +58,7 @@ export default class weather{
       // search
       const searchValue = document.querySelector('#search').value;
       const data = await getData.getData(searchValue);
-      // pass kelvin to C.
-      container.innerHTML = this.containerFill(data, 30, 35);
+      container.innerHTML = this.containerFill(data); 
     })
   }
 }
