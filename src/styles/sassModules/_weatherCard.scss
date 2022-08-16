@@ -2,8 +2,8 @@
 
 .weather-container{
   display: grid;
-  background-color: $secondary-background;
-  color: $font-p-color;
+  background-color: $white;
+  color: $font-p-color-secondary;
   place-content: center;
   width: 40vh;
   padding: 1vh;
@@ -11,14 +11,26 @@
   p{
     text-transform: capitalize;
   }
-  .clouds{
+  h2{
+    color: $font-title;
+  }
+  .weather-icon{
     width: 8vh;
     height: 4vh;
-    /* Change Icon color */
-    background-color: rgb(196, 0, 0);
-    -webkit-mask-image: url(../../imgs/Cloud.svg) ;
-    mask-image: url(../../imgs/Cloud.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    background: transparent;
+    background-repeat: space;
+    place-self: center;
+  }
+  .clouds{
+    background-image: url(../../imgs/Cloud.svg);
+  }
+  .clear{
+    background-image: url(../../imgs/Sun.svg);
+  }
+  .rain{
+    background-image: url(../../imgs/Rain.svg);
+  }
+  .thunderstorm{
+    background-image: url(../../imgs/Thunder.svg);
   }
 }
