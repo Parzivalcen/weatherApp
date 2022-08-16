@@ -4,9 +4,7 @@ export default class data {
     const response = await fetch(url,{
       mode:'cors'
     })
-    console.log('first', response);
     const data = await response.json();
-    console.log('first', data);
     if(data.cod !== 200){
       console.log('error', data);
       return data;

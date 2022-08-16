@@ -1,4 +1,5 @@
 import getData from "./getData";
+import _mainPage from "../styles/sassModules/_mainPage.scss"
 
 export default class weather{
   static searchLocation(){
@@ -6,10 +7,10 @@ export default class weather{
     container.classList.add('search-container');
     container.innerHTML = `
     <div class="search-container">
-      <label for="search">
-        <span>Find your location</span>
-        <input type="search" id="search" name="search">
-      </label>
+      <label for="search" class="search-label">Find your location</label>
+        
+      <input type="search" id="search" name="search">
+      
       <button class="search-btn">search</button>
     </div>
     `
@@ -24,7 +25,7 @@ export default class weather{
 
       const temp = (weather.temperature - 273.15).toFixed(1);
       const tempFeel = (weather.feelsLike - 273.15).toFixed(1);
-      let weatherIconClass = '';
+      let weatherIconClass = 'clouds';
       // TO change weather icons according to conditions
       if(weather.sky === 'Clouds')weatherIconClass = 'clouds'
       else if(weather.sky === 'Clear')weatherIconClass = 'clear'
