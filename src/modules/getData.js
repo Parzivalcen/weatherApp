@@ -1,8 +1,12 @@
 export default class data {
   static async getData (cityName) {
-    const API_KEY = '18123aaa20b41be0c901f11c5f07d7d8'
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`)
+    const url = `https://parzival-weather-api-server.herokuapp.com/api?q=${cityName}`
+    const response = await fetch(url,{
+      mode:'cors'
+    })
+    console.log('first', response);
     const data = await response.json();
+    console.log('first', data);
     if(data.cod !== 200){
       console.log('error', data);
       return data;

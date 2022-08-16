@@ -1,2 +1,4 @@
 node_modules
 api-proxy-server
+node_modules
+.env
