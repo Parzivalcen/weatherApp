@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: 1vw;
     min-height: 10vh;
     background-color: $primary-background;
     color: $font-p-color-secondary;
@@ -53,6 +54,12 @@
     
   }
   
+}
+@media screen and (max-width: 600px){
+  .container--footer{
+    font-size: 3.5vmin;
+  }
+
 }
 @media screen and (max-height: 400px){
 .container--footer{

@@ -58,16 +58,25 @@ export default class weather{
     hero.appendChild(dataHTML);
     return dataHTML;
   }
+  static async getDataFromSearch(){
+    const container = document.querySelector('.weather-container');
+    // empty previous weather data.
+    container.innerHTML = '';
+    // search
+    const searchValue = document.querySelector('#search').value;
+    const data = await getData.getData(searchValue);
+    container.innerHTML = this.containerFill(data); 
+  }
   static SearchLocation (){
     const searchBtn = document.querySelector('.search-btn');
+    const input = document.querySelector('input');
+    input.addEventListener('keypress', async (e)=>{
+      if(e.key==='Enter'){
+        this.getDataFromSearch();
+      }
+    })
     searchBtn.addEventListener('click', async ()=>{
-      const container = document.querySelector('.weather-container');
-      // empty previous weather data.
-      container.innerHTML = '';
-      // search
-      const searchValue = document.querySelector('#search').value;
-      const data = await getData.getData(searchValue);
-      container.innerHTML = this.containerFill(data); 
+      this.getDataFromSearch();
     })
   }
 }

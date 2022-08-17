@@ -2,8 +2,9 @@
 @media screen and (min-width: 0px) {
   main{
     height: 90vh;
-  display: grid;
-  place-items: center;
+    display: grid;
+    place-items: center;
+    font-size: 2vmin;
   .container--hero{
     display: grid;
   }
@@ -18,7 +19,7 @@
     place-items: center;
     position: relative;
     .search-label{
-      // position: absolute;
+
       padding-inline: 1vh;
       opacity: .8;
       color: $font-p-color-secondary;
@@ -26,12 +27,16 @@
     div{
       display: flex;
       gap: 1vh;
+      padding: .35vh;
       align-items: center;
+      border: .3vmin solid $font-title;
+      border-radius: 1.2vmin;
       input{
         padding-inline: 1vh;
         outline: none;
-        border: 2px solid $font-title;
-        border-radius: 10px;
+        border: none;
+        border-right: .3vmin solid $blue;
+        color: $font-p-color-secondary;
       }
     }
   }
@@ -46,7 +51,14 @@
   mask-repeat: no-repeat;
   width: 3vh;
   height: 3vh;
+  cursor: pointer;
   }
+}
+@media screen and (max-width: 600px){
+  main{
+    font-size: 3.5vmin;
+  }
+
 }
 @media screen and (max-height: 400px){
 
