@@ -1,36 +1,53 @@
 @use '../style' as *;
+@media screen and (min-width: 0px) {
+  .weather-container{
+    display: grid;
+    background-color: $white;
+    color: $font-p-color-secondary;
+    place-items: center;
+    width: 40vh;
+    padding: 1vh;
+    border-radius: 10px;
+    p{
+      text-transform: capitalize;
+    }
+    h2{
+      color: $font-title;
+    }
+    .weather-icon{
+      width: 6vh;
+      height: 6vh;
+      background: transparent;
+      background-repeat: space;
+      place-self: center;
+    }
+    .clouds{
+      background-image: url(../../imgs/Cloud.svg);
+    }
+    .clear{
+      background-image: url(../../imgs/Sun.svg);
+    }
+    .rain{
+      background-image: url(../../imgs/Rain.svg);
+    }
+    .thunderstorm{
+      background-image: url(../../imgs/Thunder.svg);
+    }
+  }
+}
+@media screen and (max-height: 400px){
+  .weather-container{
+    width: 100vw;
+    padding: 1vh;
+    border-radius: 10px;
+    p{
+      text-transform: capitalize;
+      font-size: .8rem;
+    }
+    h2{
+      font-size: 1rem;
+      color: $font-title;
+    }
 
-.weather-container{
-  display: grid;
-  background-color: $white;
-  color: $font-p-color-secondary;
-  place-items: center;
-  width: 40vh;
-  padding: 1vh;
-  border-radius: 10px;
-  p{
-    text-transform: capitalize;
-  }
-  h2{
-    color: $font-title;
-  }
-  .weather-icon{
-    width: 6vh;
-    height: 6vh;
-    background: transparent;
-    background-repeat: space;
-    place-self: center;
-  }
-  .clouds{
-    background-image: url(../../imgs/Cloud.svg);
-  }
-  .clear{
-    background-image: url(../../imgs/Sun.svg);
-  }
-  .rain{
-    background-image: url(../../imgs/Rain.svg);
-  }
-  .thunderstorm{
-    background-image: url(../../imgs/Thunder.svg);
   }
 }

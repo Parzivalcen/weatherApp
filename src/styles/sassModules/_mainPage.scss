@@ -1,6 +1,7 @@
 @use '../style' as *;
-main{
-  height: 90vh;
+@media screen and (min-width: 0px) {
+  main{
+    height: 90vh;
   display: grid;
   place-items: center;
   .container--hero{
@@ -32,17 +33,26 @@ main{
         border: 2px solid $font-title;
         border-radius: 10px;
       }
-      .search-btn{
-        color: $font-title;
-        background-color: $font-title;
-        -webkit-mask-image: url(../../imgs/lupa.svg) ;
-        mask-image: url(../../imgs/lupa.svg) ;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        width: 3vh;
-        height: 3vh;
-      }
     }
   }
   
+}
+.search-btn{
+  color: $font-title;
+  background-color: $font-title;
+  -webkit-mask-image: url(../../imgs/lupa.svg) ;
+  mask-image: url(../../imgs/lupa.svg) ;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  width: 3vh;
+  height: 3vh;
+  }
+}
+@media screen and (max-height: 400px){
+
+  .search-btn{
+    width: 6vh;
+    height: 6vh;
+  }
+
 }
