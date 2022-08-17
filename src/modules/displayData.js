@@ -6,13 +6,12 @@ export default class weather{
     const container = document.createElement('div');
     container.classList.add('search-container');
     container.innerHTML = `
-    <div class="search-container">
       <label for="search" class="search-label">Find your location</label>
+      <div>
+        <input type="search" id="search" name="search">
         
-      <input type="search" id="search" name="search">
-      
-      <button class="search-btn">search</button>
-    </div>
+        <button class="search-btn"><span class="sr-only">search</span></button>
+      </div>
     `
     return container;
   }

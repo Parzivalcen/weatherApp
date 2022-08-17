@@ -6,7 +6,7 @@ export default class home {
     hero.classList.add('container', 'container--hero');
     const searchBar = weather.searchLocation();
     hero.innerHTML = `
-    <div class="titile">
+    <div class="title">
       <h1>weather app</h1>
     </div>
     `

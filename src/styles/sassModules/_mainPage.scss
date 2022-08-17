@@ -1,0 +1,48 @@
+@use '../style' as *;
+main{
+  height: 90vh;
+  display: grid;
+  place-items: center;
+  .container--hero{
+    display: grid;
+  }
+  .title{
+    color: $font-title;
+    text-align: center;
+  }
+  .search-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5vh;
+    place-items: center;
+    position: relative;
+    .search-label{
+      // position: absolute;
+      padding-inline: 1vh;
+      opacity: .8;
+      color: $font-p-color-secondary;
+    }
+    div{
+      display: flex;
+      gap: 1vh;
+      align-items: center;
+      input{
+        padding-inline: 1vh;
+        outline: none;
+        border: 2px solid $font-title;
+        border-radius: 10px;
+      }
+      .search-btn{
+        color: $font-title;
+        background-color: $font-title;
+        -webkit-mask-image: url(../../imgs/lupa.svg) ;
+        mask-image: url(../../imgs/lupa.svg) ;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        width: 3vh;
+        height: 3vh;
+      }
+    }
+  }
+  
+}
